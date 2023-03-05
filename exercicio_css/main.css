@@ -1,0 +1,137 @@
+/*Para fazer a tag chamar o arquivo CSS, usa a tag "link": <link rel="stylesheet href="./main.css" />  
+
+Sintaxe base do CSS: 
+
+seletor {
+    propriedade: valor;
+}
+
+Selecionar um elemento a partir do ID: Usa #. Ex: #sports; ID é único na página;
+
+Selecionar um elemento a partir da class. Usa ".". Ex: .creation-date;
+
+Tributo do CSS "Box-sizing" encaixa as propriedades para ficar com o tamanho final do heigth;
+
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}  /*resetar css, sempre no inicio, muda todos os elementos da tela*/
+
+
+body > header { /*usa o sinal ">" para editar o header que é filho direto do body (body = elemeto pai)*/
+    background-color: #2f3640; /*body (elemento pai do html, todo conteúdo fica dentro do body)*/
+    padding: 16px 0; /*espaçamento cabeçalho 16px no topo nas laterais 0*/
+    color: #f5f6fa;
+}
+
+header .container { /*selecionou a tag container dentro do elemento header*/
+    display: flex; /*um elemento ao lado do outro no cabeçalho*/
+    align-items: center; /*alinhar para o centro os objetos do cabeçalho*/
+    justify-content: space-between; 
+}
+
+header li{  /*Cabeçalho, vai fazer a modificação em todos os li*/
+    display: inline; /*a propriedade Display configura a forma que o elemento será exibido. Deixar em linha (esporte, economia)*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 16px;
+}
+
+header li a { /*colocar cor na "esportes e economia" no cabeçalho*/
+    color: #f5f6fa;
+    text-decoration: none;
+}
+
+.container {
+    width: 1366px; /*largura de um notebook padrão hd*/
+    margin: 0 auto; /*topo e embaixo 0 e esquerda e direia auto*/
+}
+
+.articles {
+    display: flex; /*matém os articles um ao lado do outro*/
+    flex-wrap: wrap; /*prorpiedade para quando adicionar um novo article, ele vi paa baixo ao invés de continuar linha*/
+    justify-content: space-between; /*divide o espaço que sobrou entre os itens (articles 10%)*/
+    text-align:justify;
+}
+
+.articles article img {
+    width:100% /*largura da imagem vai ser 100%, ajusta imagem de acordo com o texto*/
+    /*height: 180px; quando limita a altura a largura se ajusta e mantém proporção*/
+}
+
+.articles article {
+    width: 30%; /*100% divididos em 3 articles*/
+}
+
+section { /*espaçamento das seções*/
+    padding: 16px 0;
+}
+
+section h2, /*editar títulos das seções */
+    .articles article { /*segundo seletor, para reaproveitar a regra usa a ","*/
+    margin-bottom: 16px; /*colocar margem no canto inferior*/
+}
+
+.articles article h3{ /*aplicar margem no título da notícia*/
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.articles article a { /*dar ao link uma cara de botão*/
+    background-color: blue;
+    color: #fff;
+    padding: 8px;
+    display: inline-block; /*tirar a sobreposição de conteúdo do botão em cima do texto*/
+    text-decoration: none; /*removendo o underline do botão ler mais*/
+    font-weight: bold; 
+    margin-top: 8px;
+}
+
+.articles article a:hover {/*aplicando um efeito aos botões, quando passar o mouse por cima. Para selecionar o estado do elemento usa :hover */
+    text-decoration: underline;
+}
+
+.articles article p,
+.articles article a { /*mudando a fonte do artigo + título do artigo*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.articles article h3 {
+    font-size: 24px; /*aumentando a fonte do título do artigo*/
+}
+
+section h2 {
+    font-size: 32px; /*deixando a fonte do título da section maior*/
+}
+
+#sports {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+#sports .articles article a {
+    background-color: #009432;
+}
+
+#economy {
+    background-color: #f8f59f;
+}
+
+#economy .articles article a {
+    background-color: #ff9f1a;
+}
+
+#Entretenimento {
+    background-color: rgb(244, 202, 187);
+}
+
+#Entretenimento .articles article a {
+    background-color:coral;
+}
+
+#Tecnologia {
+    background-color: lightskyblue;
+}
